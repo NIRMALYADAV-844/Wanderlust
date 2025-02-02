@@ -1,13 +1,10 @@
-if(process.env.NODE_ENV != "production") {
-  require('dotenv').config();
-}
-
+require("dotenv").config();
 const mongoose = require("mongoose");
 const initData = require("./data.js");
 const Listing = require("../models/listing.js");
 
 
-const dbUrl = process.env.ATLASDB_URL;
+const mongoUrl = process.env.ATLASDB_URL;
 
 main()
   .then(() => {
@@ -18,7 +15,7 @@ main()
   });
 
 async function main() {
-  await mongoose.connect(dbUrl);
+  await mongoose.connect(mongoUrl);
 }
 
 const initDB = async () => {
@@ -28,4 +25,4 @@ const initDB = async () => {
   console.log("data was initialized");
 };
 
-// initDB();
+initDB();
