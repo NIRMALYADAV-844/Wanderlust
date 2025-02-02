@@ -55,6 +55,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #222222 !important;
   }
   
   .f-info-socials i {
