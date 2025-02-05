@@ -23,26 +23,15 @@
                         aria-expanded="false">
                         <i class="fa-solid fa-circle-user"></i>&nbsp;&nbsp;&nbsp;
                     </button>
-                    <ul class="dropdown-menu">
-                        <% if(!currUser) { %>
-                            <a class="nav-link" href="/signup"><i class="fa-solid fa-user-plus"></i>&nbsp; &nbsp;<b>Sign
-                                    up</b></a>
-                            <a class="nav-link" href="/login"><b><i class="fa-solid fa-user-check"></i>&nbsp; &nbsp;Log
-                                    in</b></a>
-                            <% } %>
-                                <% if(currUser) { %>
-                                    <h6 class="mt-1 nav-link"><b><i class="fa-solid fa-user"></i>
-                                            &nbsp; &nbsp;<%= currUser.username %>
-                                        </b></h6>
-                                    <a class="nav-link" href="/logout"><b><i
-                                                class="fa-solid fa-arrow-right-from-bracket"></i>&nbsp; &nbsp;Log
-                                            out</b></a>
-                                    <% } %>
-                                        <hr />
-                                        <a class="nav-link" href="/listings/new"><strong><i
-                                                    class="fa-solid fa-circle-plus"></i>&nbsp; &nbsp;Wanderlust Listings
-                                                home</strong></a>
-                    </ul>
+                    <div class="navbar-nav ms-auto">
+                        <a class="nav-link create-list" href="/listings/new">Wnaderlust your Home</a>
+                        <% if(!curruser) {%>
+                          <a class="nav-link" href="/signup"><b>SignUp</b></a>
+                          <a class="nav-link" href="/login"><b>LogIn</b></a>
+                        <% } %>
+                        <% if(curruser) {%>
+                          <a class="nav-link" href="/logout"><b>LogOut</b></a>
+                        <% } %>
                 </div>
                 <div id="responsive-registration">
                     <% if(!currUser) { %>
